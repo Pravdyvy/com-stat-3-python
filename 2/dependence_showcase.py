@@ -3,10 +3,11 @@ import matplotlib.pyplot as plt
 
 n = 10_000
 
-sample = np.random.randn(n)
+sample1 = np.sort(np.random.randn(n))
+sample2 = np.sort(np.random.randn(n))
 
-x = sample
-y = (sample*2) + 5
+x = sample1
+y = (sample2*2) + 5
 
 plt.figure(figsize=(8, 8))
 plt.scatter(x, y, s=5, alpha=0.5)
