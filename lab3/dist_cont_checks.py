@@ -1,7 +1,7 @@
 from random import random
 
 def uniform_once(a, b):
-    return a
+    return (random() * (b-a)) + a
 
 def uniform_sample(a, b, num):
     res = []
