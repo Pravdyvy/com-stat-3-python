@@ -10,9 +10,9 @@ def boxplot1():
     plt.show()
 
 def boxplot2():
-    np_sample2 = np.random.normal(loc=0, scale=1, size=100)
+    np_sample2 = np.random.normal(loc=0, scale=1, size=10000)
 
     plt.boxplot(np_sample2)
     plt.show()
 
-boxplot1()
+boxplot2()
