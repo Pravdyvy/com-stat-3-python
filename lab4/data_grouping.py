@@ -35,15 +35,20 @@ def grouped_variance(x):
 
 # x - sorted sample of any distribution
 # returns dictionary (number, its absolute frequency)
-# ToDo: Fix
 def grouped_sample_force(x, line_lambda):
     res = dict()
 
     for el_lambda in line_lambda:
         res[el_lambda] = []
 
-        for i in x:
-            if i <= el_lambda:
-                res[el_lambda].append(i)
+    i = 0
+    j = 0
+
+    while i < len(x):
+        if x[i] <= line_lambda[j]:
+            res[line_lambda[j]].append(x[i])
+        else:
+            j += 1
+        i += 1
 
     return res 
