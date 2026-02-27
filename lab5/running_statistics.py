@@ -25,10 +25,20 @@ def variance(x):
 
 # Returns sequence [1, ..., n]
 def enumeration(n):
-    return []
+    return list(range(1,n+1))
 
 # Returns running statistic `stat` on sample x
 # x - sample of some distribution
 # stat(x) - function, which takes one arg(seq)
 def running_statistic(x, stat):
-    return []
+    res = []
+
+    for i in range(1, len(x)+1):
+        res.append(stat(x[:i]))
+
+    return res
+
+# Returns estimate of left boundary of uniform[left, right]
+# using method of moments `left = mean - sqrt(3*variance)`
+def omm_stat_uniform_left(x):
+    return mean(x) - (3 * variance(x)) ** 0.5
